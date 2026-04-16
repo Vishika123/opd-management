@@ -1,0 +1,24 @@
+<section>
+  <h2>Consultation</h2>
+
+  <div class="form">
+    <input [(ngModel)]="consultation.bloodPressure" placeholder="Blood Pressure">
+    <input [(ngModel)]="consultation.temperature" placeholder="Temperature">
+    <input [(ngModel)]="consultation.notes" placeholder="Notes">
+    <input [(ngModel)]="consultation.appointment.id" placeholder="Appointment ID">
+
+    <button (click)="save()">Save Consultation</button>
+  </div>
+
+  <hr>
+
+  <h3>Consultation List</h3>
+
+  <ul *ngIf="consultations.length > 0">
+    <li *ngFor="let c of consultations">
+      <b>{{c.notes}}</b> | BP: {{c.bloodPressure}} | Temp: {{c.temperature}}
+    </li>
+  </ul>
+
+  <p *ngIf="consultations.length === 0">No consultations found</p>
+</section>

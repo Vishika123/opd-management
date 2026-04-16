@@ -1,0 +1,22 @@
+<h1>OPD Management System</h1>
+
+<!-- Navigation Buttons -->
+<div class="nav">
+  <button (click)="show('patient')">Patient</button>
+  <button (click)="show('appointment')">Appointment</button>
+  <button (click)="show('consultation')">Consultation</button>
+</div>
+
+<!-- Screens -->
+
+<div *ngIf="screen === 'patient'">
+  <app-patient></app-patient>
+</div>
+
+<div *ngIf="screen === 'appointment'">
+  <app-appointment></app-appointment>
+</div>
+
+<div *ngIf="screen === 'consultation'">
+  <app-consultation></app-consultation>
+</div>

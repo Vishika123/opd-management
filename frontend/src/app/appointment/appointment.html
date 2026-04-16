@@ -1,0 +1,23 @@
+<section>
+  <h2>Book Appointment</h2>
+
+  <div class="form">
+    <input [(ngModel)]="appointment.doctorName" placeholder="Doctor Name">
+    <input [(ngModel)]="appointment.appointmentTime" placeholder="YYYY-MM-DDTHH:MM">
+    <input [(ngModel)]="appointment.patient.id" placeholder="Patient ID">
+
+    <button (click)="save()">Book</button>
+  </div>
+
+  <hr>
+
+  <h3>Appointment List</h3>
+
+  <ul *ngIf="appointments.length > 0">
+    <li *ngFor="let a of appointments">
+      <b>{{a.doctorName}}</b> | {{a.appointmentTime}} | Patient ID: {{a.patient?.id}}
+    </li>
+  </ul>
+
+  <p *ngIf="appointments.length === 0">No appointments found</p>
+</section>

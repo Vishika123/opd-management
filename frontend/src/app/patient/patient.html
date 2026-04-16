@@ -1,0 +1,24 @@
+<section>
+  <h2>Add Patient</h2>
+
+  <div class="form">
+    <input [(ngModel)]="patient.name" placeholder="Name">
+    <input [(ngModel)]="patient.gender" placeholder="Gender">
+    <input [(ngModel)]="patient.age" placeholder="Age">
+    <input [(ngModel)]="patient.phone" placeholder="Phone">
+
+    <button (click)="save()">Save</button>
+  </div>
+
+  <hr>
+
+  <h3>Patient List</h3>
+
+  <ul *ngIf="patients.length > 0">
+    <li *ngFor="let p of patients">
+      <b>{{p.name}}</b> | {{p.gender}} | Age: {{p.age}} | 📞 {{p.phone}}
+    </li>
+  </ul>
+
+  <p *ngIf="patients.length === 0">No patients found</p>
+</section>
